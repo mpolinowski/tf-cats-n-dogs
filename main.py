@@ -56,7 +56,7 @@ train_generator = train_datagen.flow_from_directory('./data/training_set/',
                                                    shuffle = True)
 
 # compile the new model
-model.compile(optimizer = 'Adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
+model.compile(optimizer = 'Adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 # and train it on your dataset
 history = model.fit(train_generator, steps_per_epoch=train_generator.n//train_generator.batch_size, epochs = 5)
 
